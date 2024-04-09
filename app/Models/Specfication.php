@@ -7,17 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Doctor;
 
 
-class Hospital extends Model
+class Specfication extends Model
 {
     use HasFactory;
     protected $fillable =[
         'name',
-        'specialest',
-        'location',
-
+        'status'
     ];
-    public function doctores(){
-        return $this->belongsToMany(Doctor::class);
+    public function doctors(){
+        return $this->hasMany(Doctor::class);
     }
-
+    
 }

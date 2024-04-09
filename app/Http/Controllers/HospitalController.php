@@ -35,9 +35,9 @@ class HospitalController extends Controller
             'name' => $request->name,
             'specialest' => $request->specialest,
             'location' => $request->location,
-        
         ]);
         DB::commit();
+        $hospital->doctores()->attach($request->doctor_id);
         return response()->json([
             'status' => 'success',
             'hospital' => $hospital

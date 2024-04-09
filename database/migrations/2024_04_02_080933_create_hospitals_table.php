@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('specialest');
             $table->string('location');
+            $table->foreignId('doctor_id');
             $table->timestamps();
         });
     }
